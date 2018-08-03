@@ -1,0 +1,104 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace tokosepokathepebis
+{
+    public partial class frmmain : Form
+    {
+        public frmmain()
+        {
+            InitializeComponent();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin memilih Supreme?", "ALERT!", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    frmsupreme fmsupreme = new frmsupreme();
+                    fmsupreme.Show();
+                    this.Hide();
+                }
+
+                else if(result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            else if (radioButton2.Checked)
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin memilih Adidas?", "ALERT!", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    frmadidas fmadidas = new frmadidas();
+                    fmadidas.Show();
+                    this.Hide();
+                }
+
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            else if (radioButton3.Checked)
+            {
+                DialogResult result = MessageBox.Show("Apakah Anda yakin memilih Nike?", "ALERT!", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    frmnike fmnike = new frmnike();
+                    fmnike.Show();
+                    this.Hide();
+                }
+
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Anda tidak memilih apa-apa!");
+            }
+        }
+
+        private void frmmain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Apakah Anda yakin ingin keluar?", "ALERT!", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+
+            else if (result == DialogResult.No)
+            {
+                return;
+            }
+        }
+    }
+}
