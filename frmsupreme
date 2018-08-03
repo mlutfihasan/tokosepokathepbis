@@ -1,0 +1,88 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace tokosepokathepebis
+{
+    public partial class frmsupreme : Form
+    {
+        public frmsupreme()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                label2.Text = "3";
+                label2.Visible = true;
+            }
+
+            else if(radioButton2.Checked)
+            {
+                label2.Text = "11";
+                label2.Visible = true;
+            }
+
+            else if (radioButton3.Checked)
+            {
+                label2.Text = "7";
+                label2.Visible = true;
+            }
+
+            else
+            {
+                MessageBox.Show("Anda Belum memilih sepatu!");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Apakah Anda yakin ingin kembali?", "ALERT!", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                frmmain fmmain = new frmmain();
+                fmmain.Show();
+                this.Close();
+            }
+
+            else if (result == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
